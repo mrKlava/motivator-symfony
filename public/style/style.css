@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+/* 
+========================================================
+                    Base & Reset 
+========================================================
+*/
+body {
+  color: #fff;
+  background-color: #0c0c16;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "Alumni Sans", sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+========================================================
+                    Text & Titles 
+========================================================
+*/
+.text {
+  color: #fff;
+  font-size: 2rem;
+}
+@media (max-width: 992px) {
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
+.title {
+  font-family: "Karantina", cursive;
+  text-transform: uppercase;
+  color: #eadb7c;
+  font-size: 8rem;
+}
+@media (max-width: 992px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+.title.black {
+  color: #000;
+}
+.title.white {
+  color: #fff;
+}
+
+.suptitle {
+  font-family: "Inria Sans", sans-serif;
+  text-transform: uppercase;
+  color: #eadb7c;
+  font-size: 4rem;
+}
+@media (max-width: 992px) {
+  .suptitle {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .suptitle {
+    font-size: 2.5rem;
+  }
+}
+.suptitle.black {
+  color: #000;
+}
+.suptitle.white {
+  color: #fff;
+}
+
+/* 
+========================================================
+                    Buttons 
+========================================================
+*/
+.btn {
+  cursor: pointer;
+  background-color: #4ba0d4;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  transition: linear 0.2s background-color, linear 0.2s color;
+}
+.btn:hover {
+  background-color: #246a95;
+}
+.btn:focus {
+  outline: none;
+}
+.btn_sec {
+  background: transparent;
+  color: #4ba0d4;
+  padding: calc(0.125rem - 1.5px) calc(0.625rem - 1.5px);
+  border: 3px solid #4ba0d4;
+}
+.btn_sec:hover {
+  background-color: #4ba0d4;
+  color: #fff;
+}
+.btn_thr {
+  text-decoration: underline;
+  background: transparent;
+  color: #4ba0d4;
+}
+.btn_thr:hover {
+  color: #eadb7c;
+  background-color: transparent;
+}
+.btn_big {
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+}
+@media (max-width: 992px) {
+  .btn_big {
+    font-size: 1rem;
+  }
+}
+.btn_contr {
+  background-color: #950f2b;
+}
+.btn_contr:hover {
+  background-color: #e9214b;
+}
+.btn_contr.btn_sec {
+  background-color: inherit;
+  border-color: #950f2b;
+  color: #950f2b;
+}
+.btn_contr.btn_sec.btn_big {
+  padding: 0.3125rem 1.8125rem;
+}
+.btn_contr.btn_sec:hover {
+  background-color: #950f2b;
+  color: #fff;
+}
+.btn_contr.btn_thr {
+  text-decoration: underline;
+  background-color: inherit;
+  color: #950f2b;
+}
+.btn_contr.btn_thr:hover {
+  color: #eadb7c;
+}/*# sourceMappingURL=style.css.map */

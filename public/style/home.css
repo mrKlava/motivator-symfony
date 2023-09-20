@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+/* 
+========================================================
+                        Swiper 
+========================================================
+*/
+.swiper {
+  width: 100%;
+  max-width: 60vh;
+}
+.swiper-button-prev, .swiper-button-next {
+  color: #eadb7c;
+}
+.swiper-slide img {
+  border: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+/* 
+========================================================
+                        Styles 
+========================================================
+*/
+.action-group {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  top: 1rem;
+}
+.action-group a:first-child {
+  margin-right: 1rem;
+}
+
+.about {
+  background-color: #0c0c16;
+  overflow: hidden;
+  padding: 15rem 0;
+}
+.about-content {
+  opacity: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+@media (max-width: 768px) {
+  .about-content {
+    background-image: none;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.about-content__item {
+  position: relative;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .about-content__item {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+}
+.about-content__item:first-child {
+  width: 40%;
+  margin-right: 2rem;
+  background: url("/img/page/home/bg/about-person-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  .about-content__item:first-child {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+.about-content__item:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  background: url("/img/page/home/bg/about-text-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  .about-content__item:last-child {
+    width: 100%;
+    padding: 4rem 3rem;
+    margin-right: 0;
+  }
+}
+.about-text .text {
+  text-align: justify;
+  transform: perspective(30rem) rotateY(-15deg) translate3d(-10%, 15%, 0);
+  transition: transform 0.2s linear;
+  margin: 0 3rem 1rem 4rem;
+}
+@media (max-width: 768px) {
+  .about-text .text {
+    transform: perspective(30rem) rotateY(15deg) translate3d(10%, 0, 0);
+    padding-top: 3rem;
+    margin: 0 1rem 2rem;
+  }
+}
+.about-text .btn {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+@media (max-width: 768px) {
+  .about-text .btn {
+    opacity: 1;
+  }
+}
+.about-text:hover .text {
+  transform: none;
+}
+.about-text:hover .btn {
+  opacity: 1;
+}
+.about-title {
+  position: absolute;
+  left: 35%;
+  transform: translateX(-10%);
+  white-space: nowrap;
+  background: url("/img/page/home/bg/about-title-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 5rem;
+  margin: -5rem;
+}
+@media (max-width: 768px) {
+  .about-title {
+    transform: translateX(0);
+    margin-bottom: 3rem;
+  }
+}
+
+.action {
+  padding: 10rem 0;
+  text-align: center;
+  background-color: #0c0c16;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .action {
+    padding: 2rem 0;
+  }
+}
+.action-content {
+  padding: 4rem 0;
+  background-image: url("/img/page/home/bg/action-triangle-bg.svg"), url("/img/page/home/bg/action-ligne-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .action-content {
+    padding: 2rem 0;
+  }
+}
+.action-content__title {
+  margin-bottom: 3rem;
+}
+.action-content__title::after {
+  display: block;
+  content: "";
+  width: 30%;
+  height: 3px;
+  background-color: #eadb7c;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}/*# sourceMappingURL=home.css.map */

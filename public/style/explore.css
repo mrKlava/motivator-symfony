@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+.filter {
+  background-color: #0c0c16;
+  padding: 8rem 1rem;
+}
+.filter-content {
+  height: 20rem;
+  background: url("/img/page/explore/bg/filter-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 2rem;
+  padding: 4rem 2rem;
+}
+
+.blogs {
+  background-color: #0c0c16;
+}
+.blogs-content_item {
+  display: flex;
+  width: 90%;
+  margin-bottom: 4rem;
+}
+.blogs-content_item:nth-child(odd) {
+  background: url("/img/page/explore/bg/card-right-bg.png");
+  background-position: right;
+  margin-left: 10%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-direction: row;
+}
+.blogs-content_item:nth-child(odd) .blog-item {
+  padding-right: 2rem;
+}
+.blogs-content_item:nth-child(even) {
+  background: url("/img/page/explore/bg/card-left-bg.png");
+  background-position: left;
+  margin-right: 10%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-direction: row-reverse;
+}
+.blogs-content_item:nth-child(even) .blog-item {
+  padding-left: 2rem;
+}
+.blogs-load {
+  display: flex;
+}
+.blogs-load a {
+  margin: 3rem auto;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.blog-item img {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
+.blog-title {
+  margin-bottom: 1.225rem;
+}
+.blog-text {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.blog-link {
+  margin-bottom: 1rem;
+}
+.blog-link .btn {
+  font-weight: 100;
+  padding: 0;
+}
+.blog-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.blog-list_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+.blog-list_item svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.blog-list_item span {
+  font-size: 1.5rem;
+  margin-left: 0.725rem;
+}/*# sourceMappingURL=explore.css.map */

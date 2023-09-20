@@ -1,0 +1,44 @@
+/* 
+========================================================
+                          Parralax 
+========================================================
+*/
+.header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 8rem;
+}
+
+.parallax {
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 44vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+#header-bg {
+  background-image: url("/img/parallax/back2.png");
+  top: -1%;
+  height: 65vh;
+}
+#header-third {
+  background-image: url("/img/parallax/third.png");
+  bottom: 22%;
+}
+#header-second {
+  background-image: url("/img/parallax/second.png");
+  bottom: 15%;
+}
+#header-first {
+  background-image: url("/img/parallax/first.png");
+  bottom: 0%;
+}
+#header-front {
+  background-image: url("/img/parallax/front.png");
+  position: absolute;
+  bottom: 0%;
+}/*# sourceMappingURL=header-parallax.css.map */

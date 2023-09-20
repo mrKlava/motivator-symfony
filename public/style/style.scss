@@ -1,0 +1,217 @@
+@use './_variables' as *;
+
+/* 
+========================================================
+                    Base & Reset 
+========================================================
+*/
+
+body {
+  color: $color-text;
+  background-color: $bg-body;
+  margin: 0 auto;
+  font-size: $font-size-base;
+  font-family: $font-text;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  // border:1px solid red;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 1rem;
+
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+========================================================
+                    Text & Titles 
+========================================================
+*/
+
+.text {
+  color: $color-text;
+  font-size: $text-md;
+
+  @media (max-width: $screen-lg) {
+    font-size: $text-sm;
+  }
+}
+
+.title {
+  // color: $color-title;
+  // font-family: $font-title;
+  // font-size: $text-xl;
+  // text-transform: uppercase;
+
+  font-family: $font-title;
+  text-transform: uppercase;
+  color: $color-title;
+  font-size: $text-xl;
+
+  @media (max-width: $screen-lg) {
+    font-size: calc($text-lg + 2rem);
+  }
+  @media (max-width: $screen-md) {
+    font-size: calc($text-lg + 1rem);
+  }
+
+  &.black {
+    color: $noir;
+  }
+  &.white {
+    color: $blanche;
+  }
+}
+
+.suptitle {
+  font-family: $font-suptitle;
+  text-transform: uppercase;
+  color: $color-title;
+  font-size: $text-lg;
+
+  @media (max-width: $screen-lg) {
+    font-size: calc($text-sm + 1rem);
+  }
+  @media (max-width: $screen-md) {
+    font-size: calc($text-sm + 1rem);
+  }
+
+  &.black {
+    color: $noir;
+  }
+  &.white {
+    color: $blanche;
+  }
+}
+
+/* 
+========================================================
+                    Buttons 
+========================================================
+*/
+
+.btn {
+  cursor: pointer;
+  background-color: $bg-btn-prm;
+
+  text-transform: uppercase;
+  font-size: $text-sm;
+  font-family: $font-link;
+  font-weight: 700;
+  color: $blanche;
+
+  border: none;
+  border-radius: 5px;
+
+  padding: .25rem 1rem;
+
+  transition: linear .2s background-color, linear .2s color;
+  
+  &:hover {
+    background-color: $bg-btn-prm-hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &_sec {
+    background: $bg-btn-sec;
+    color: $color-btn-sec;
+
+    padding: calc(.125rem - 1.5px) calc(.625rem - 1.5px);
+
+    border: 3px solid $color-btn-sec;
+
+    &:hover {
+      background-color: $bg-btn-sec-hover;
+      color: $color-btn-sec-hover;
+    }
+  }
+
+  &_thr {
+    text-decoration: underline;
+    background: $bg-btn-sec;
+    color: $color-btn-sec;
+
+    &:hover {
+      color: $color-navlink-hover;
+      background-color: transparent;
+    }
+  }
+
+  &_big {
+    font-size: $text-sm;
+    padding: .5rem 2rem;
+
+    @media (max-width: $screen-lg) {
+      font-size: $text-xs;
+    }
+  }
+
+  &_contr {
+    background-color: $bg-navbar;
+
+    &:hover {
+      background-color: lighten($bg-navbar, 20%);
+    }
+
+    &.btn_sec {
+      background-color: inherit;
+      border-color: $bg-navbar;
+      color: $bg-navbar;
+
+      &.btn_big {
+        padding: .3125rem 1.8125rem;
+      }
+
+      &:hover {
+        background-color: $bg-navbar;
+        color: $color-btn-sec-hover;
+      }
+    }
+
+    &.btn_thr {
+      text-decoration: underline;
+      background-color: inherit;
+      color: $bg-navbar;
+
+      &:hover {
+        color: $color-navlink-hover;
+      }
+    }
+  }
+}
