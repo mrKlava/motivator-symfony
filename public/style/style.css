@@ -94,6 +94,12 @@ ul {
 .title.white {
   color: #fff;
 }
+.title.bg {
+  background-image: url("/img/UI/title-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
 
 .suptitle {
   font-family: "Inria Sans", sans-serif;
@@ -195,4 +201,19 @@ ul {
 }
 .btn_contr.btn_thr:hover {
   color: #eadb7c;
+}
+
+/* 
+========================================================
+                    Navigation 
+========================================================
+*/
+.nav {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  top: 1rem;
+}
+.nav a:first-child {
+  margin-right: 1rem;
 }/*# sourceMappingURL=style.css.map */

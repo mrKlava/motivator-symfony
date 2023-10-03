@@ -1,0 +1,35 @@
+<svg 
+preserveAspectRatio="none"
+
+viewBox="0 0 1440 478" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_701_204)">
+<path d="M5.46341e-05 321.001L1440.5 0.50068L1440.5 126.501L6.92267e-05 432.001L5.46341e-05 321.001Z" fill="#EADB7C"/>
+</g>
+<g filter="url(#filter1_i_701_204)">
+<path d="M-1.90398e-07 461.5L1440 201.69L1440 224L-1.23096e-07 474.5L-1.90398e-07 461.5Z" fill="#EADB7C"/>
+</g>
+<defs>
+<filter id="filter0_i_701_204" x="-25.9999" y="0.500671" width="1466.5" height="446.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="10" operator="erode" in="SourceAlpha" result="effect1_innerShadow_701_204"/>
+<feOffset dx="-26" dy="15"/>
+<feGaussianBlur stdDeviation="14"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_701_204"/>
+</filter>
+<filter id="filter1_i_701_204" x="-26" y="201.69" width="1466" height="287.81" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="10" operator="erode" in="SourceAlpha" result="effect1_innerShadow_701_204"/>
+<feOffset dx="-26" dy="15"/>
+<feGaussianBlur stdDeviation="14"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_701_204"/>
+</filter>
+</defs>
+</svg>

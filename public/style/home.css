@@ -28,16 +28,6 @@ font-family: 'Karantina', cursive;
                         Styles 
 ========================================================
 */
-.action-group {
-  position: fixed;
-  z-index: 100;
-  right: 1rem;
-  top: 1rem;
-}
-.action-group a:first-child {
-  margin-right: 1rem;
-}
-
 .about {
   background-color: #0c0c16;
   overflow: hidden;

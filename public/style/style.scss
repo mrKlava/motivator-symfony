@@ -94,6 +94,13 @@ ul {
   &.white {
     color: $blanche;
   }
+
+  &.bg {
+    background-image: url('/img/UI/title-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
 }
 
 .suptitle {
@@ -213,5 +220,24 @@ ul {
         color: $color-navlink-hover;
       }
     }
+  }
+}
+
+/* 
+========================================================
+                    Navigation 
+========================================================
+*/
+
+.nav {
+  position: fixed;
+
+  z-index: 100;
+
+  right: 1rem;
+  top: 1rem;
+
+  & a:first-child {
+    margin-right: 1rem;
   }
 }

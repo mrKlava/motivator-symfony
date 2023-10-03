@@ -1,31 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Log in!
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('style/form.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<main class="main">
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+		<div class="form-title">
+			<h1 class="title">Login</h1>
+		</div>
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+		<form class="form" method="post">
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+			<div class="form-bg">
+				<div class="form-content">
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+
+					{% if app.user %}
+						<div class="mb-3">
+							You are logged in as
+							{{ app.user.userIdentifier }},
+							<a href="{{ path('app_logout') }}">Logout</a>
+						</div>
+					{% endif %}
+
+
+					<div
+						class="form-group email">
+						{# <label for="inputEmail">Email</label> #}
+						<div class="form-input_bg">
+							<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus placeholder="Email ...">
+						</div>
+					</div>
+
+					<div
+						class="form-group password">
+						{# <label for="inputPassword">Password</label> #}
+						<div class="form-input_bg">
+							<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required placeholder="Password ...">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-btns">
+				<div class="form-btns_item">
+					<button class="btn btn_prm" type="submit">
+						Sign in
+					</button>
+					<a href="{{ path('app_register') }}">
+						<button class='btn btn_sec' type="button">register</button>
+					</a>
+				</div>
+
+				<a href="{{ path('app_register') }}">
+					<button class='btn btn_thr' type="button">back to home</button>
+				</a>
+			</div>
+		</form>
+
+	</main>
 {% endblock %}
+

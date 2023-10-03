@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+.form.profile {
+  background: none;
+  padding: 0;
+}
+.form-profile-bio {
+  width: 70%;
+  background-image: url("/img/page/profile/bg/profile-bg.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100% 100%;
+  padding: 4rem 0;
+  margin-bottom: 5rem;
+}
+.form-profile-bio .textarea {
+  padding: 0 6rem;
+}
+.form-profile-bio .bio-wrapper {
+  display: flex;
+}
+.form-profile-bio .bio-content {
+  width: 80%;
+  margin-right: 3rem;
+  padding-left: 6rem;
+}
+.form-profile-bio .bio-img {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+.form-profile-bio .bio-img img {
+  display: block;
+  width: 100%;
+}
+.form-profile-data {
+  background-image: url("/img/page/profile/bg/profile-2-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 6rem;
+}/*# sourceMappingURL=profile.css.map */

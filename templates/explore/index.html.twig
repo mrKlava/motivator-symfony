@@ -18,14 +18,23 @@
 	<main>
 
 		{# need to make component which will be used in all pages #}
-		<div id="actionGroup" class="action-group">
-			<a href="{{ path('app_explore') }}">
-				<button class='btn btn_contr'>SIGN IN</button>
-			</a>
-			<a href="{{ path('app_explore') }}">
-				<button class='btn btn_sec btn_contr'>explore</button>
-			</a>
-		</div>
+		<nav id="nav" class="nav">
+			{% if app.user %}
+				<a href="{{ path('app_home') }}">
+					<button class='btn btn_prm btn_contr'>home</button>
+				</a>
+				<a href="{{ path('app_logout') }}">
+					<button class='btn btn_sec btn_contr'>Logout</button>
+				</a>
+			{% else %}
+				<a href="{{ path('app_login') }}">
+					<button class='btn btn_contr'>SIGN IN</button>
+				</a>
+				<a href="{{ path('app_explore') }}">
+					<button class='btn btn_sec btn_contr'>explore</button>
+				</a>
+			{% endif %}
+		</nav>
 
 		{% include "template_parts/_header_parallax.html.twig" %}
 
@@ -41,7 +50,7 @@
 			<div class="blogs-content">
 
 				<div class="blogs-content_item">
-					<div class="blog-item">
+					<div class="blog-item image">
 						<img src="{{ asset('img/page/explore/card/card-pers-1.png') }}"/>
 					</div>
 					<div class="blog-item">
@@ -120,7 +129,7 @@
 				</div>
 
 				<div class="blogs-content_item">
-					<div class="blog-item">
+					<div class="blog-item image">
 						<img src="{{ asset('img/page/explore/card/card-pers-2.png') }}"/>
 					</div>
 					<div class="blog-item">
@@ -199,7 +208,7 @@
 				</div>
 
 				<div class="blogs-content_item">
-					<div class="blog-item">
+					<div class="blog-item image">
 						<img src="{{ asset('img/page/explore/card/card-pers-3.png') }}"/>
 					</div>
 					<div class="blog-item">

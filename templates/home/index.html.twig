@@ -21,14 +21,23 @@
 	<main>
 
 		{# need to make component which will be used in all pages #}
-		<div id="actionGroup" class="action-group">
-			<a href="{{ path('app_explore') }}">
-				<button class='btn btn_contr'>SIGN IN</button>
-			</a>
-			<a href="{{ path('app_explore') }}">
-				<button class='btn btn_sec btn_contr'>explore</button>
-			</a>
-		</div>
+		<nav id="nav" class="nav">
+			{% if app.user %}
+				<a href="{{ path('app_explore') }}">
+					<button class='btn btn_prm btn_contr'>explore</button>
+				</a>
+				<a href="{{ path('app_logout') }}">
+					<button class='btn btn_sec btn_contr'>Logout</button>
+				</a>
+			{% else %}
+				<a href="{{ path('app_login') }}">
+					<button class='btn btn_contr'>SIGN IN</button>
+				</a>
+				<a href="{{ path('app_explore') }}">
+					<button class='btn btn_sec btn_contr'>explore</button>
+				</a>
+			{% endif %}
+		</nav>
 
 		{% include "template_parts/_header_parallax.html.twig" %}
 
@@ -97,7 +106,7 @@
 				<h1 class="action-content__title action-title title">
 					your story
 				</h1>
-				<a href="{{ path('app_explore') }}">
+				<a href="{{ path('app_login') }}">
 					<button class='btn btn_big'>SIGN IN</button>
 				</a>
 			</div>

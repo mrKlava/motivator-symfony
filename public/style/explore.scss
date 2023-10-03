@@ -57,6 +57,10 @@
       }
       
       margin-bottom: 4rem;
+
+      @media (max-width: $screen-md) {
+        flex-direction: column !important;
+      }
     }
   }
 
@@ -74,30 +78,71 @@
     flex-direction: column;
     justify-content: center;
 
-    width: 50%;
+    width: 60%;
+
+    &.image {
+      width: 40%;
+
+      @media (max-width: $screen-md) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: $screen-md) {
+      width: 100% !important;
+      align-items: center;
+      padding: 0 2rem;
+    }
 
     img {
       margin: 0 auto;
       display: block;
 
-      width: 60%;
+      width: 80%;
+
+      @media (max-width: $screen-lg) {
+        width: 90%;
+      }
+
+      @media (max-width: $screen-lg) {
+        width: 60%;
+      }
     }
   }
 
   &-title {
     margin-bottom: 1.225rem;
+    
+    @media (max-width: $screen-sm) {
+      text-align: center;
+      font-size: $text-md;
+      margin-bottom: 1rem;
+    }
   }
 
   &-text {
     margin-bottom: 1rem;
     text-align: justify;
+
+    @media (max-width: $screen-sm) {
+      font-size: calc($text-xs + 2px);
+    }
   }
 
   &-link {
-    margin-bottom: 1rem;
+    
     .btn {
+      font-size: $text-sm;
       font-weight: 100;
       padding: 0;
+      
+      margin-bottom: 2rem;
+
+      @media (max-width: $screen-lg) {
+        font-size: $text-xs;
+
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -105,6 +150,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
 
     &_item {
       display: flex;
@@ -115,13 +161,24 @@
 
 
       svg {
-        width: $text-sm;
-        height: $text-sm;
+        width: calc($text-sm - 4px);
+        height: calc($text-sm - 4px);
+
+        @media (max-width: $screen-lg) {
+          width: calc($text-xs - 4px);
+          height: calc($text-xs - 4px);
+        }
       }
 
       span {
-        font-size: $text-sm;
+        color: $color-arrow;
+        font-weight: 100;
+        font-size: calc($text-sm - 4px);
         margin-left: .725rem;
+
+        @media (max-width: $screen-lg) {
+          font-size: $text-xs ;
+        }
       }
     }
   }
