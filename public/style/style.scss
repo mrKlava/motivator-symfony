@@ -10,7 +10,7 @@ body {
   color: $color-text;
   background-color: $bg-body;
   margin: 0 auto;
-  font-size: $font-size-base;
+  font-size: $text-base;
   font-family: $font-text;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -53,6 +53,13 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* 
@@ -180,7 +187,16 @@ ul {
     }
   }
 
-  &_big {
+  &_sm {
+    font-size: $text-base;
+    padding: .5rem 2rem;
+
+    @media (max-width: $screen-lg) {
+      font-size: $text-xs;
+    }
+  }
+
+  &_lg {
     font-size: $text-sm;
     padding: .5rem 2rem;
 
@@ -237,7 +253,89 @@ ul {
   right: 1rem;
   top: 1rem;
 
-  & a:first-child {
+  &-link:first-child {
     margin-right: 1rem;
+  }
+
+  &-container {
+    position: static;
+  }
+
+  &-list {
+    background-color: $color-arrow;
+
+    position: absolute;
+    top: -1rem;
+    right: -10rem;
+
+    box-shadow: 0 0 2rem $bg-body;
+    transition: right .2s linear;
+
+    &.active {
+      right: -1rem;
+    }
+    
+    &_item {
+      background-color: $bg-btn-prm;
+      // border-bottom: 1px solid $color-arrow;
+      margin: 3px;
+
+      transition: background .2s linear;
+
+      a {
+        display: block;
+        color: $color-navlink;
+        font-size: $text-md;
+
+        padding: .525rem 2rem;
+
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.admin {
+        background-color: $bg-navbar;
+      }
+
+      &:hover {
+        background-color: $bg-btn-prm-hover;
+        a {
+          color: $color-navlink-hover;
+        }
+      }
+    }
+  }
+
+  .avatar {
+    z-index: 10;
+    background-image: url('/img/UI/avatar-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    padding: .5325rem;
+
+    cursor: pointer;
+
+    &-container {
+      
+      width: 4rem;
+      height: 4rem;
+      overflow: hidden;
+
+      border-radius: 50%;
+      border: 5px solid $bg-btn-prm;
+  
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  & a:first-child {
+    // margin-right: 1rem;
   }
 }

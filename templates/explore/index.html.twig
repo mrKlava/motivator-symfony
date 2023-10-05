@@ -11,6 +11,7 @@
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 	<script defer src="{{ asset('app/parallax.js') }}"></script>
+	<script defer src="{{ asset('app/nav.js') }}"></script>
 	{# <script defer src="{{ asset('app/swiper.js') }}"></script> #}
 {% endblock %}
 
@@ -18,36 +19,118 @@
 	<main>
 
 		{# need to make component which will be used in all pages #}
-		<nav id="nav" class="nav">
-			{% if app.user %}
-				<a href="{{ path('app_home') }}">
-					<button class='btn btn_prm btn_contr'>home</button>
-				</a>
-				<a href="{{ path('app_logout') }}">
-					<button class='btn btn_sec btn_contr'>Logout</button>
-				</a>
-			{% else %}
-				<a href="{{ path('app_login') }}">
-					<button class='btn btn_contr'>SIGN IN</button>
-				</a>
-				<a href="{{ path('app_explore') }}">
-					<button class='btn btn_sec btn_contr'>explore</button>
-				</a>
-			{% endif %}
-		</nav>
-
 		{% include "template_parts/_header_parallax.html.twig" %}
+		{% include "template_parts/_nav.html.twig" %}
 
 		<section class="filter">
 			<div class="filter-content">
-				<form>
-					
-				</form>
+				<form></form>
 			</div>
 		</section>
 
 		<section class="blogs">
 			<div class="blogs-content">
+
+				{% for blog in blogs %}
+					{#
+						{{ blog.id }}
+						{{ blog.title }}
+						{{ blog.suptitle }}
+						{{ blog.text }}
+						{{ blog.coverImg }}
+						{{ blog.img }}
+						{{ blog.created ? blog.created|date('Y-m-d H:i:s') : '' }}
+											
+						<a href="{{ path('app_blog_show', {'id': blog.id}) }}">show</a>
+						<a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>
+					#}
+
+					<div class="blogs-content_item">
+						<div class="blog-item image">
+							<img src="{{ asset('img/blogs/card/' ~ blog.img) }}"/>
+						</div>
+						<div class="blog-item">
+
+							<h1 class="blog-title suptitle">{{ blog.title }}</h1>
+
+							<p class="blog-text text">{{ blog.text }} ...</p>
+
+							<a class="blog-link" href="{{ path('app_blog_show', {'id': blog.id}) }}">
+								<button class='btn btn_thr'>read more</button>
+								
+							</a>
+
+							<ul class="blog-list">
+								<li class="blog-list_item">
+									<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_753_229)">
+											<path d="M13.6 16C13.6 16 15 16 15 14.6667C15 13.3333 13.6 9.33333 8 9.33333C2.4 9.33333 1 13.3333 1 14.6667C1 16 2.4 16 2.4 16H13.6ZM2.4308 14.6667C2.42046 14.6653 2.41018 14.6635 2.4 14.6613C2.4014 14.3093 2.6338 13.288 3.464 12.368C4.2368 11.5053 5.5948 10.6667 8 10.6667C10.4038 10.6667 11.7618 11.5067 12.536 12.368C13.3662 13.288 13.5972 14.3107 13.6 14.6613L13.5888 14.664C13.5823 14.665 13.5758 14.6659 13.5692 14.6667H2.4308ZM8 6.66667C8.74261 6.66667 9.4548 6.38572 9.9799 5.88562C10.505 5.38552 10.8 4.70724 10.8 4C10.8 3.29276 10.505 2.61448 9.9799 2.11438C9.4548 1.61428 8.74261 1.33333 8 1.33333C7.25739 1.33333 6.5452 1.61428 6.0201 2.11438C5.495 2.61448 5.2 3.29276 5.2 4C5.2 4.70724 5.495 5.38552 6.0201 5.88562C6.5452 6.38572 7.25739 6.66667 8 6.66667ZM12.2 4C12.2 4.52529 12.0914 5.04543 11.8803 5.53073C11.6692 6.01604 11.3599 6.45699 10.9698 6.82843C10.5798 7.19986 10.1168 7.4945 9.60727 7.69552C9.0977 7.89654 8.55155 8 8 8C7.44845 8 6.9023 7.89654 6.39273 7.69552C5.88316 7.4945 5.42016 7.19986 5.03015 6.82843C4.64014 6.45699 4.33077 6.01604 4.1197 5.53073C3.90863 5.04543 3.8 4.52529 3.8 4C3.8 2.93913 4.2425 1.92172 5.03015 1.17157C5.8178 0.421427 6.88609 0 8 0C9.11391 0 10.1822 0.421427 10.9698 1.17157C11.7575 1.92172 12.2 2.93913 12.2 4Z" fill="#EADB7C"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_753_229">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+
+									<span>Michael Jordan</span>
+								</li>
+
+								<li class="blog-list_item">
+									<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_753_224)">
+											<path d="M8 3.5C8 3.36739 7.94732 3.24021 7.85355 3.14645C7.75979 3.05268 7.63261 3 7.5 3C7.36739 3 7.24021 3.05268 7.14645 3.14645C7.05268 3.24021 7 3.36739 7 3.5V9C7.00003 9.08813 7.02335 9.17469 7.06761 9.25091C7.11186 9.32712 7.17547 9.39029 7.252 9.434L10.752 11.434C10.8669 11.4961 11.0014 11.5108 11.127 11.4749C11.2525 11.4391 11.3591 11.3556 11.4238 11.2422C11.4886 11.1288 11.5065 10.9946 11.4736 10.8683C11.4408 10.7419 11.3598 10.6334 11.248 10.566L8 8.71V3.5Z" fill="#EADB7C"/>
+											<path d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15C6.14348 15 4.36301 14.2625 3.05025 12.9497C1.7375 11.637 1 9.85652 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z" fill="#EADB7C"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_753_224">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+
+									<span>{{ blog.created ? blog.created|date('d/m/Y') : '' }}</span>
+								</li>
+
+								<li class="blog-list_item">
+									<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_753_217)">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M7.58302 1.43657C7.95338 0.776538 8.56298 0.29502 9.27782 0.0978502C9.99266 -0.0993195 10.7542 0.00399557 11.3952 0.385086L12.6056 1.10405C13.2462 1.48559 13.7136 2.11361 13.905 2.85004C14.0964 3.58648 13.9961 4.37107 13.6262 5.03137L8.04318 14.9935L3.45246 16L2 11.3987L7.58302 1.43657ZM10.6973 1.62979L11.9077 2.34875C12.228 2.53952 12.4617 2.85353 12.5574 3.22174C12.6531 3.58996 12.603 3.98226 12.418 4.31241L11.7201 5.55935L8.09334 3.40247L8.79122 2.15553C8.9764 1.82551 9.2812 1.58475 9.63862 1.48617C9.99604 1.38758 10.3768 1.43924 10.6973 1.62979ZM11.0223 6.80405L7.39547 4.64717L3.52006 11.5627L4.39241 14.3262L7.14685 13.7195L11.0223 6.80405Z" fill="#EADB7C"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_753_217">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+
+									<span>Sport</span>
+								</li>
+
+								<li class="blog-list_item">
+									<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_753_217)">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M7.58302 1.43657C7.95338 0.776538 8.56298 0.29502 9.27782 0.0978502C9.99266 -0.0993195 10.7542 0.00399557 11.3952 0.385086L12.6056 1.10405C13.2462 1.48559 13.7136 2.11361 13.905 2.85004C14.0964 3.58648 13.9961 4.37107 13.6262 5.03137L8.04318 14.9935L3.45246 16L2 11.3987L7.58302 1.43657ZM10.6973 1.62979L11.9077 2.34875C12.228 2.53952 12.4617 2.85353 12.5574 3.22174C12.6531 3.58996 12.603 3.98226 12.418 4.31241L11.7201 5.55935L8.09334 3.40247L8.79122 2.15553C8.9764 1.82551 9.2812 1.58475 9.63862 1.48617C9.99604 1.38758 10.3768 1.43924 10.6973 1.62979ZM11.0223 6.80405L7.39547 4.64717L3.52006 11.5627L4.39241 14.3262L7.14685 13.7195L11.0223 6.80405Z" fill="#EADB7C"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_753_217">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+
+									<span>Edited</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				{% else %}
+					<tr>
+						<td colspan="8">no records found</td>
+					</tr>
+				{% endfor %}
+
 
 				<div class="blogs-content_item">
 					<div class="blog-item image">
@@ -285,6 +368,7 @@
 						</ul>
 					</div>
 				</div>
+
 
 				<div class="blogs-load">
 					<a href="{{ path('app_explore') }}">

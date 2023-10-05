@@ -15,31 +15,14 @@
 	<script defer src="{{ asset('app/parallax.js') }}"></script>
 	<script defer src="{{ asset('app/home.js') }}"></script>
 	<script defer src="{{ asset('app/swiper.js') }}"></script>
+		<script defer src="{{ asset('app/nav.js') }}"></script>
 {% endblock %}
 
 {% block body %}
 	<main>
 
-		{# need to make component which will be used in all pages #}
-		<nav id="nav" class="nav">
-			{% if app.user %}
-				<a href="{{ path('app_explore') }}">
-					<button class='btn btn_prm btn_contr'>explore</button>
-				</a>
-				<a href="{{ path('app_logout') }}">
-					<button class='btn btn_sec btn_contr'>Logout</button>
-				</a>
-			{% else %}
-				<a href="{{ path('app_login') }}">
-					<button class='btn btn_contr'>SIGN IN</button>
-				</a>
-				<a href="{{ path('app_explore') }}">
-					<button class='btn btn_sec btn_contr'>explore</button>
-				</a>
-			{% endif %}
-		</nav>
-
 		{% include "template_parts/_header_parallax.html.twig" %}
+		{% include "template_parts/_nav.html.twig" %}
 
 		<section id='about' class='about'>
 

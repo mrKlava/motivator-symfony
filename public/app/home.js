@@ -1,7 +1,6 @@
 "use strict"
 /* Variables */
 
-
 const about = document.getElementById('about')
 const action = document.getElementById('action')
 const actionGroup = document.getElementById('actionGroup')

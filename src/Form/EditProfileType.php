@@ -18,14 +18,17 @@ class EditProfileType extends AbstractType
     {
         $builder
         ->add('firstname', TextType::class)
-        ->add('middlename', TextType::class)
+        ->add('middlename', TextType::class, [
+            'required' => false
+        ])
         ->add('lastname', TextType::class)
         ->add('birthdate', DateType::class)
         ->add('img', TextType::class)
         ->add('email', EmailType::class)
         ->add('username', TextType::class)
         ->add('bio', TextareaType::class, [
-            'label' => 'Bio'
+            'label' => 'Bio',
+            'required' => false
         ])
         ->add('save', SubmitType::class)
         ;
