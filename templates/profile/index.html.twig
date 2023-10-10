@@ -17,8 +17,7 @@
 		</div>
 
 		<form class="form profile" method="post">
-			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
+		{{ form_start(form) }}
 			<div class="form-profile-bio">
 
 				<div class="bio-wrapper">
@@ -60,7 +59,9 @@
 
 				<div class="form-group textarea">
 					{{ form_label(form.bio)}}
-					{{ form_widget(form.bio, { 'attr': { placeholder: 'Some short story about you ...' } })}}
+					<div>
+						{{ form_widget(form.bio, { 'attr': { placeholder: 'Some short story about you ...' } })}}
+					</div>
 				</div>
 
 
@@ -114,6 +115,8 @@
 					</a>
 				</div>
 			</div>
+		{{ form_end(form) }}
+
 		</form>
 	</main>
 {% endblock %}

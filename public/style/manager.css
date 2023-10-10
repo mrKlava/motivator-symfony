@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+.header {
+  text-align: center;
+  padding: 2rem 0;
+  margin: 2rem auto;
+}
+.header-title h1 {
+  padding: 2rem 2rem;
+}
+
+table, th, td {
+  border: 1px solid #eadb7c;
+  padding: 0.5rem 2rem;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+table .title {
+  font-size: 1.5rem;
+}
+table td {
+  font-size: 1.5rem;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}/*# sourceMappingURL=manager.css.map */

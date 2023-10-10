@@ -17,7 +17,7 @@ class BlogType extends AbstractType
             ->add('text')
             ->add('cover_img')
             ->add('img')
-            ->add('created')
+            // ->add('created')
         ;
     }
 

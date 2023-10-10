@@ -39,7 +39,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1566px;
   padding: 0 1rem;
 
   margin: 0 auto;
@@ -91,6 +91,7 @@ button {
   @media (max-width: $screen-lg) {
     font-size: calc($text-lg + 2rem);
   }
+
   @media (max-width: $screen-md) {
     font-size: calc($text-lg + 1rem);
   }
@@ -98,6 +99,7 @@ button {
   &.black {
     color: $noir;
   }
+
   &.white {
     color: $blanche;
   }
@@ -119,6 +121,7 @@ button {
   @media (max-width: $screen-lg) {
     font-size: calc($text-sm + 1rem);
   }
+
   @media (max-width: $screen-md) {
     font-size: calc($text-sm + 1rem);
   }
@@ -126,6 +129,7 @@ button {
   &.black {
     color: $noir;
   }
+
   &.white {
     color: $blanche;
   }
@@ -153,7 +157,7 @@ button {
   padding: .25rem 1rem;
 
   transition: linear .2s background-color, linear .2s color;
-  
+
   &:hover {
     background-color: $bg-btn-prm-hover;
   }
@@ -237,6 +241,44 @@ button {
       }
     }
   }
+
+  &_delete {
+    cursor: pointer;
+
+    svg {
+      fill: lighten($bg-navbar, 20%);
+      height: $text-sm;
+      width: $text-sm;
+
+      transition: fill .2s linear;
+    }
+
+    &:hover {
+      svg {
+        fill: $bg-navbar;
+      }
+    }
+  }
+}
+
+.btn_edit,
+.btn_view {
+  cursor: pointer;
+
+  svg {
+    fill: $bg-btn-prm;
+    height: $text-sm;
+    width: $text-sm;
+
+    transition: fill .2s linear;
+  }
+
+  &:hover {
+    svg {
+      fill: $bg-btn-prm-hover;
+    }
+  }
+
 }
 
 /* 
@@ -274,7 +316,7 @@ button {
     &.active {
       right: -1rem;
     }
-    
+
     &_item {
       background-color: $bg-btn-prm;
       // border-bottom: 1px solid $color-arrow;
@@ -301,6 +343,7 @@ button {
 
       &:hover {
         background-color: $bg-btn-prm-hover;
+
         a {
           color: $color-navlink-hover;
         }
@@ -320,14 +363,14 @@ button {
     cursor: pointer;
 
     &-container {
-      
+
       width: 4rem;
       height: 4rem;
       overflow: hidden;
 
       border-radius: 50%;
       border: 5px solid $bg-btn-prm;
-  
+
       img {
         display: block;
         width: 100%;

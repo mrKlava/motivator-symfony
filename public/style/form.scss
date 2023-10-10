@@ -37,7 +37,6 @@
 
     padding: 4rem 5rem;
     margin: 2rem auto;
-
   }
 
   &-content {
@@ -99,6 +98,10 @@
       }
     }
 
+    textarea {
+      height: 250px;
+    }
+
     &.checkbox {
       input {
         width: inherit;
@@ -135,6 +138,10 @@
 
       }
     }
+
+    label {
+      font-size: calc($text-sm + 2px);
+    }
   }
 
   &-input_bg {
@@ -150,6 +157,7 @@
     align-items: center;
     flex-direction: column;
 
+    margin-top: 3rem;
 
     &_item {
       & .btn_prm {
@@ -158,9 +166,5 @@
 
       margin-bottom: 1rem;
     }
-  }
-
-  label {
-    font-size: calc($text-sm + 2px);
   }
 }

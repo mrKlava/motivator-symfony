@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use DateTime;
+
 use App\Entity\Blog;
 use App\Form\BlogType;
 use App\Repository\BlogRepository;
@@ -46,6 +48,7 @@ class BlogController extends AbstractController
     public function show(Blog $blog): Response
     {
         return $this->render('blog/show.html.twig', [
+            'title' => 'Blog',
             'blog' => $blog,
         ]);
     }
@@ -55,8 +58,11 @@ class BlogController extends AbstractController
     {
         $form = $this->createForm(BlogType::class, $blog);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
+            $blog->setCreated(new DateTime());
+
+            $entityManager->persist($blog);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);

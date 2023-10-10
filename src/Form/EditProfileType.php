@@ -23,7 +23,9 @@ class EditProfileType extends AbstractType
         ])
         ->add('lastname', TextType::class)
         ->add('birthdate', DateType::class)
-        ->add('img', TextType::class)
+        // ->add('img', TextType::class, [
+        //     'required' => false
+        // ])
         ->add('email', EmailType::class)
         ->add('username', TextType::class)
         ->add('bio', TextareaType::class, [

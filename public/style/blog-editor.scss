@@ -1,0 +1,80 @@
+@use './variables' as *;
+
+.header {
+  background-image: url('/img/blogs/cover/no-image.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  // max-height: 60vh;
+  min-height: 90vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  padding-top: 12rem;
+
+  margin-bottom: 10rem;
+
+  box-shadow: inset 0 -17vh 3rem $bg-body;
+
+  &-title {
+    background-image: url('/img/UI/blog-setup-title-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+
+    width: 100%;
+    padding: 6rem 2rem;
+
+    .title {
+      display: inline;
+      background-image: url('/img/UI/blog-setup-title-text-bg.svg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: 100% 100%;
+
+      padding: 5rem 0;
+    }
+  }
+}
+
+.suptitle {
+  font-size: $text-md;
+
+  margin-bottom: 3rem;
+}
+
+.blog {
+  &-setup {
+    width: 80%;
+
+    background-image: url('/img/UI/blog-setup-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+    
+    padding: 6rem 5rem;
+    margin-left: 20%;
+
+    margin-bottom: 4rem;
+  }
+  
+  &-paragraph {
+    background-image: url('/img/UI/blog-setup-paragraph-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    padding: 6rem 5rem;
+
+    margin-bottom: 4rem;
+  }
+}
+
+.delete {
+  text-align: center;
+}

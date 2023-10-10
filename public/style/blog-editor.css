@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300&family=Inter:wght@300;700&family=Karantina:wght@300;400;700&display=swap");
+/*
+font-family: 'Alumni Sans', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Karantina', cursive;
+*/
+.header {
+  background-image: url("/img/blogs/cover/no-image.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  min-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 12rem;
+  margin-bottom: 10rem;
+  box-shadow: inset 0 -17vh 3rem #0c0c16;
+}
+.header-title {
+  background-image: url("/img/UI/blog-setup-title-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+  width: 100%;
+  padding: 6rem 2rem;
+}
+.header-title .title {
+  display: inline;
+  background-image: url("/img/UI/blog-setup-title-text-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+  padding: 5rem 0;
+}
+
+.suptitle {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.blog-setup {
+  width: 80%;
+  background-image: url("/img/UI/blog-setup-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+  padding: 6rem 5rem;
+  margin-left: 20%;
+  margin-bottom: 4rem;
+}
+.blog-paragraph {
+  background-image: url("/img/UI/blog-setup-paragraph-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 6rem 5rem;
+  margin-bottom: 4rem;
+}
+
+.delete {
+  text-align: center;
+}/*# sourceMappingURL=blog-editor.css.map */

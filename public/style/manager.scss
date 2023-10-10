@@ -1,0 +1,42 @@
+@use './variables' as *;
+
+.header {
+  text-align: center;
+
+    padding: 2rem 0;
+    margin: 2rem auto;
+
+    &-title {
+      h1 {
+        padding: 2rem 2rem;
+      }
+    }
+}
+
+table, th, td {
+  border: 1px solid $flax;
+  padding: .5rem 2rem;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+
+  .title {
+    font-size: $text-sm;
+  }
+
+  td {
+    font-size: $text-sm;
+  }
+}
+
+.table {
+    &-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 1rem;
+    }
+}

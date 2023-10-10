@@ -1,13 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Blog{% endblock %}
+{% block title %}
+	Edit Blog
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('style/form.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('style/blog-editor.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+	<script defer src="{{ asset('app/nav.js') }}"></script>
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Blog</h1>
+	<main class="main">
+		{% include "template_parts/_nav.html.twig" %}
+		<header class="header">
+			<div class="header-title">
+				<h1 class="title">Blog Editor</h1>
+			</div>
+		</header>
 
-    {{ include('blog/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_blog_index') }}">back to list</a>
+		{{ include('blog/_form.html.twig') }}
+		<div class="delete">
+			{{ include('blog/_delete_form.html.twig') }}
+		</div>
+	</main>
 
-    {{ include('blog/_delete_form.html.twig') }}
 {% endblock %}
+

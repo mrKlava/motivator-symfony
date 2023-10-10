@@ -1,0 +1,1 @@
+{"version":3,"sources":["_variables.scss","manager.scss","manager.css"],"names":[],"mappings":"AAAQ,2MAAA;AAqDR;;;;;CAAA;ACnDA;EACE,kBAAA;EAEE,eAAA;EACA,iBAAA;ACKJ;ADFM;EACE,kBAAA;ACIR;;ADCA;EACE,yBAAA;EACA,oBAAA;EACA,yBAAA;ACEF;;ADCA;EACE,WAAA;ACEF;ADAE;EACE,iBD+CoB;AE7CxB;ADCE;EACE,iBD2CoB;AE1CxB;;ADII;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EAEA,SAAA;ACFN","file":"manager.css"}

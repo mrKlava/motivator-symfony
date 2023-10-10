@@ -42,7 +42,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1566px;
   padding: 0 1rem;
   margin: 0 auto;
 }
@@ -217,6 +217,34 @@ button {
 }
 .btn_contr.btn_thr:hover {
   color: #eadb7c;
+}
+.btn_delete {
+  cursor: pointer;
+}
+.btn_delete svg {
+  fill: #e9214b;
+  height: 1.5rem;
+  width: 1.5rem;
+  transition: fill 0.2s linear;
+}
+.btn_delete:hover svg {
+  fill: #950f2b;
+}
+
+.btn_edit,
+.btn_view {
+  cursor: pointer;
+}
+.btn_edit svg,
+.btn_view svg {
+  fill: #4ba0d4;
+  height: 1.5rem;
+  width: 1.5rem;
+  transition: fill 0.2s linear;
+}
+.btn_edit:hover svg,
+.btn_view:hover svg {
+  fill: #246a95;
 }
 
 /* 
