@@ -14,7 +14,9 @@ font-family: 'Karantina', cursive;
   padding: 2rem 2rem;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #eadb7c;
   padding: 0.5rem 2rem;
   border-collapse: collapse;
@@ -26,8 +28,10 @@ table {
 table .title {
   font-size: 1.5rem;
 }
-table td {
-  font-size: 1.5rem;
+table td.title {
+  font-size: 1.5rem !important;
+  font-family: "Alumni Sans", sans-serif !important;
+  color: #fff !important;
 }
 
 .table-actions {
@@ -35,4 +39,63 @@ table td {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  height: 100%;
+}
+
+.fixed-table-toolbar {
+  padding: 1rem 2rem 2rem;
+  display: flex;
+}
+.fixed-table-toolbar input {
+  border: 3px solid #eadb7c;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+.fixed-table-toolbar input:focus {
+  outline: none;
+}
+.fixed-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.fixed-table-pagination .dropdown-menu {
+  display: none;
+  background-color: #4ba0d4;
+}
+.fixed-table-pagination .dropdown-menu.show {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.fixed-table-pagination .dropdown-item {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.2s linear;
+}
+.fixed-table-pagination .dropdown-item:hover {
+  color: #eadb7c;
+}
+.fixed-table-pagination .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.fixed-table-pagination .pagination .page-item a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.2s linear;
+}
+.fixed-table-pagination .pagination .page-item a:hover {
+  color: #eadb7c;
+}
+.fixed-table-pagination .pagination .page-item.active a {
+  color: #eadb7c;
 }/*# sourceMappingURL=manager.css.map */

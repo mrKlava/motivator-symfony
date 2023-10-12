@@ -247,6 +247,11 @@ button {
   fill: #246a95;
 }
 
+.btn_center {
+  text-align: center;
+  margin: 0 auto 3rem;
+}
+
 /* 
 ========================================================
                     Navigation 
@@ -306,6 +311,7 @@ button {
   background-size: 100% 100%;
   padding: 0.5325rem;
   cursor: pointer;
+  transition: background 0.1s linear;
 }
 .nav .avatar-container {
   width: 4rem;
@@ -313,8 +319,19 @@ button {
   overflow: hidden;
   border-radius: 50%;
   border: 5px solid #4ba0d4;
+  transition: border 0.1s linear;
 }
 .nav .avatar-container img {
   display: block;
   width: 100%;
+  transition: width 0.1s linear;
+}
+.nav:hover .avatar {
+  background-size: 90% 90%;
+}
+.nav:hover .avatar-container {
+  border-color: #950f2b;
+}
+.nav:hover .avatar img {
+  width: 110%;
 }/*# sourceMappingURL=style.css.map */

@@ -5,9 +5,20 @@
 
 {% block stylesheets %}
 	<link href="{{ asset('style/manager.css') }}" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 {% endblock %}
+
+
 {% block javascripts %}
 	<script defer src="{{ asset('app/nav.js') }}"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+	<script defer src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -19,20 +30,20 @@
 			</div>
 		</header>
 
-		<table class="table">
+		<table class="table" data-toggle="table" data-search="true" data-pagination="true">
 			<thead>
 				<tr>
-					<th class="title">Id</th>
-					<th class="title">Email</th>
+					<th class="title" data-field="id" data-sortable="true">Id</th>
+					<th class="title" data-field="email" data-sortable="true">Email</th>
+					<th class="title" data-field="username" data-sortable="true">Username</th>
 					{# <th class="title">Roles</th> #}
 					{# <th class="title">Password</th> #}
-					<th class="title">Firstname</th>
-					<th class="title">Middlename</th>
-					<th class="title">Lastname</th>
-					<th class="title">Birthdate</th>
-					<th class="title">Img</th>
-					<th class="title">Username</th>
-					<th class="title">Created</th>
+					<th class="title" data-field="firstame" data-sortable="true">Firstname</th>
+					<th class="title" data-field="middlename" data-sortable="true">Middlename</th>
+					<th class="title" data-field="lastname" data-sortable="true">Lastname</th>
+					<th class="title" data-field="birthday" data-sortable="true">Birthdate</th>
+					<th class="title" data-field="img" data-sortable="true">Img</th>
+					<th class="title" data-field="created" data-sortable="true">Created</th>
 					{# <th class="title">Bio</th> #}
 					<th class="title">actions</th>
 				</tr>
@@ -42,15 +53,15 @@
 					<tr>
 						<td>{{ user.id }}</td>
 						<td>{{ user.email }}</td>
+						<td>{{ user.username }}</td>
 						{# <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
 						{# <td>{{ user.password }}</td> #}
 						<td>{{ user.firstname }}</td>
 						<td>{{ user.middlename }}</td>
 						<td>{{ user.lastname }}</td>
-						<td>{{ user.birthdate ? user.birthdate|date('Y-m-d') : '' }}</td>
+						<td>{{ user.birthdate ? user.birthdate|date('m/d/Y') : '' }}</td>
 						<td>{{ user.img }}</td>
-						<td>{{ user.username }}</td>
-						<td>{{ user.created ? user.created|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ user.created ? user.created|date('m/d/Y H:i:s') : '' }}</td>
 						{# <td>{{ user.bio }}</td> #}
 						<td class="table-actions">
 							<span class="table-actions_item">
@@ -79,7 +90,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
+	</main>
 
-		<a class='btn' href="{{ path('app_user_new') }}">Create new</a>
-	{% endblock %}
+{% endblock %}
 

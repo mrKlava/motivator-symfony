@@ -3,17 +3,19 @@
 .header {
   text-align: center;
 
-    padding: 2rem 0;
-    margin: 2rem auto;
+  padding: 2rem 0;
+  margin: 2rem auto;
 
-    &-title {
-      h1 {
-        padding: 2rem 2rem;
-      }
+  &-title {
+    h1 {
+      padding: 2rem 2rem;
     }
+  }
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid $flax;
   padding: .5rem 2rem;
   border-collapse: collapse;
@@ -26,17 +28,104 @@ table {
     font-size: $text-sm;
   }
 
-  td {
-    font-size: $text-sm;
+  td.title {
+    font-size: $text-sm !important;
+    font-family: $font-text !important;
+    color: $color-text !important;
   }
 }
 
 .table {
-    &-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      gap: 1rem;
+    gap: 1rem;
+    height: 100%;
+  }
+}
+
+
+
+.fixed-table {
+  &-toolbar {
+    padding: 1rem 2rem 2rem;
+    display: flex;
+
+    input {
+      border: 3px solid $color-arrow;
+      background-color: transparent;
+
+      color: $color-text;
+      font-size: $text-sm;
+      
+      padding: 1rem 2rem;
+
+      &:focus {
+        outline: none;
+      }
     }
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 1rem 2rem;
+    width: 100%;
+
+    .dropdown {
+      &-menu {
+        display: none;
+        background-color: $bg-btn-prm;
+
+        &.show {
+          display: flex;
+          gap: 1rem;
+          padding: 1rem;
+        }
+      }
+      &-item {
+        color: $color-navlink;
+          font-size: $text-sm;
+          font-weight: 700;
+  
+          transition: color .2s linear;
+  
+          &:hover {
+            color: $color-navlink-hover;
+          }
+      }
+
+    }
+  
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      .page-item {
+        a {
+          color: $color-navlink;
+          font-size: $text-sm;
+          font-weight: 700;
+  
+          transition: color .2s linear;
+  
+          &:hover {
+            color: $color-navlink-hover;
+          }
+        }
+  
+        &.active {
+          a {
+            color: $color-arrow;
+          }
+        }
+      }
+    }
+  }
 }

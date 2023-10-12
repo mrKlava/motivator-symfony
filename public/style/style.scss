@@ -278,7 +278,11 @@ button {
       fill: $bg-btn-prm-hover;
     }
   }
+}
 
+.btn_center {
+  text-align: center;
+  margin: 0 auto 3rem;
 }
 
 /* 
@@ -362,8 +366,10 @@ button {
 
     cursor: pointer;
 
-    &-container {
 
+    transition: background .1s linear;
+
+    &-container {
       width: 4rem;
       height: 4rem;
       overflow: hidden;
@@ -371,11 +377,31 @@ button {
       border-radius: 50%;
       border: 5px solid $bg-btn-prm;
 
+      transition: border .1s linear;
+      
       img {
         display: block;
         width: 100%;
+
+      transition: width .1s linear;
+
       }
     }
+  }
+
+  &:hover {
+      .avatar {
+        background-size: 90% 90%;
+
+        &-container {
+          // border-color: $bg-btn-prm-hover;
+          border-color: $bg-navbar;
+        }
+
+        img {
+          width: 110%;
+        }
+      }
   }
 
   & a:first-child {
