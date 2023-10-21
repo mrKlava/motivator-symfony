@@ -43,6 +43,12 @@ p {
   padding: 0 1rem;
 
   margin: 0 auto;
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
 }
 
 a {
@@ -285,6 +291,10 @@ button {
   margin: 0 auto 3rem;
 }
 
+.btn_approve {
+  margin-bottom: 1rem;
+}
+
 /* 
 ========================================================
                     Navigation 
@@ -312,7 +322,7 @@ button {
 
     position: absolute;
     top: -1rem;
-    right: -10rem;
+    right: -12rem;
 
     box-shadow: 0 0 2rem $bg-body;
     transition: right .2s linear;

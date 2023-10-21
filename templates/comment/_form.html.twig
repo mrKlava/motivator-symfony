@@ -1,0 +1,48 @@
+{{ form_start(form) }}
+
+<div class="blog-paragraph">
+	<div class="container">
+		<h3 class="suptitle">Comment Editor</h3>
+		<div class="form-row">
+				<ul class="form-info">
+			<li class="form-info_item">Created:
+				<span>{{ comment.created|date('d/m/Y m:s') }}</span>
+			</li>
+			<li class="form-info_item">
+				Created by:
+				<span>
+					<a href="{{ path('app_user_edit', {'id': comment.user.getId}) }}">{{ comment.user.getUsername }}</a>
+				</span>
+			</li>
+			<li class="form-info_item">Blog ID:
+				<span>
+					<a href="{{ path('app_blog_show', {'id': comment.blog.getId}) }}">{{ comment.blog.getId }}</a>
+				</span>
+			</li>
+			<li class="form-info_item">Approved:
+				<span>
+					<input type="checkbox" disabled {{ comment.approved == true ? "checked" }}>
+				</span>
+			</li>
+		</ul>
+			<div class="form-group textarea">
+				<div>
+					{{ form_widget(form.text, { 'attr': { placeholder: 'Comment text ...' } })}}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="form-btns">
+		<div class="form-btns_item">
+			<button class="btn btn_prm">{{ button_label|default('Save') }}</button>
+			<a href="{{ path('app_comment_index') }}">
+				<button class='btn btn_sec' type="button">cancel</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}
+

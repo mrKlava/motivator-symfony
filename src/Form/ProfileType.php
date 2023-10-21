@@ -30,15 +30,6 @@ class ProfileType extends AbstractType
                 'required' => false
             ])
             ->add('save', SubmitType::class)
-
-            // ->add('password', PasswordType::class, [
-            //     'required' => false
-            // ])
-            // ->add('rePassword', PasswordType::class, [
-            //     'mapped' => false,
-            //     'label' => 'Confirm Password',
-            //     'required' => false
-            // ])
         ;
     }
 

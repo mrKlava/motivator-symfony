@@ -5,7 +5,10 @@ namespace App\Controller;
 use DateTime;
 
 use App\Entity\Blog;
+use App\Entity\Comment;
 use App\Form\BlogType;
+use App\Form\CommentType;
+use App\Repository\CommentRepository;
 use App\Repository\BlogRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,6 +35,8 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $blog->setCreated(new DateTime());
             $entityManager->persist($blog);
             $entityManager->flush();
 
@@ -44,14 +49,35 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_blog_show', methods: ['GET'])]
-    public function show(Blog $blog): Response
+    #[Route('/{id}', name: 'app_blog_show', methods: ['GET', 'POST'])]
+    public function show(Blog $blog, Request $request, EntityManagerInterface $entityManager): Response
     {
+        $comments = $blog->getComments();
+
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setCreated(new DateTime());
+            $comment->setApproved(1);
+            $comment->setBlog($blog);
+            $comment->setUser($this->getUser());
+
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_blog_show', ['id' => $blog->getId()], Response::HTTP_SEE_OTHER);
+        }
+
         return $this->render('blog/show.html.twig', [
             'title' => 'Blog',
             'blog' => $blog,
+            'comments' => $comments,
+            'form' => $form,
+            'comment' => $comment,
         ]);
-    }
+     }
 
     #[Route('/{id}/edit', name: 'app_blog_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Blog $blog, EntityManagerInterface $entityManager): Response

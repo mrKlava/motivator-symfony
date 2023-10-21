@@ -46,7 +46,7 @@ ScrollTrigger.create({
   start: '30% 70%',
   end: '100% 70%',
   toggleActions: "play reverse play reverse",
-  markers: true,
+  markers: false,
 })
 
 
@@ -85,5 +85,5 @@ ScrollTrigger.create({
   start: 'top 70%',
   end: 'bottom 70%',
   toggleActions: "play reverse play reverse",
-  markers: true,
+  markers: false,
 })

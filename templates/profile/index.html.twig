@@ -16,108 +16,101 @@
 			<h1 class="title">Profile</h1>
 		</div>
 
-		<form class="form profile" method="post">
 		{{ form_start(form) }}
-			<div class="form-profile-bio">
+		<div class="form-profile-bio">
 
-				<div class="bio-wrapper">
-					<div class="bio-content">
-						<div class="form-group text">
-							{{ form_label(form.firstname)}}
-							<div class="form-input_bg">
-								{{ form_widget(form.firstname, 
+			<div class="bio-wrapper">
+				<div class="bio-content">
+					<div class="form-group text">
+						{{ form_label(form.firstname)}}
+						<div class="form-input_bg">
+							{{ form_widget(form.firstname, 
                             { 'attr': { placeholder: 'Firstname ...' } }
                         )}}
-							</div>
-						</div>
-						<div class="form-group text">
-							{{ form_label(form.middlename)}}
-							<div class="form-input_bg">
-								{{ form_widget(form.middlename,{ 'attr': { placeholder: 'Middlename ...' } })}}
-							</div>
-						</div>
-						<div class="form-group text">
-							{{ form_label(form.lastname)}}
-							<div class="form-input_bg">
-								{{ form_widget(form.lastname, { 'attr': { placeholder: 'Lastname ...' } })}}
-							</div>
-						</div>
-						<div class="form-group date">
-
-							{{ form_label(form.birthdate)}}
-							{{ form_widget(form.birthdate)}}
-
 						</div>
 					</div>
+					<div class="form-group text">
+						{{ form_label(form.middlename)}}
+						<div class="form-input_bg">
+							{{ form_widget(form.middlename,{ 'attr': { placeholder: 'Middlename ...' } })}}
+						</div>
+					</div>
+					<div class="form-group text">
+						{{ form_label(form.lastname)}}
+						<div class="form-input_bg">
+							{{ form_widget(form.lastname, { 'attr': { placeholder: 'Lastname ...' } })}}
+						</div>
+					</div>
+					<div class="form-group date">
 
-					<div class="bio-img">
-
-						<img src="{{ asset('img/page/profile/picture/user-1.jpg') }}" alt="">
+						{{ form_label(form.birthdate)}}
+						{{ form_widget(form.birthdate)}}
 
 					</div>
 				</div>
 
-				<div class="form-group textarea">
-					{{ form_label(form.bio)}}
-					<div>
-						{{ form_widget(form.bio, { 'attr': { placeholder: 'Some short story about you ...' } })}}
-					</div>
+				<div class="bio-img">
+
+					<img src="{{ asset('img/page/profile/picture/user-1.jpg') }}" alt="">
+
 				</div>
-
-
 			</div>
 
-			<div class="form-profile-data">
-				<div class="form-group email">
-					{{ form_label(form.email)}}
-					<div class="form-input_bg">
-						{{ form_widget(form.email, 
+			<div class="form-group textarea">
+				{{ form_label(form.bio)}}
+				<div>
+					{{ form_widget(form.bio, { 'attr': { placeholder: 'Some short story about you ...' } })}}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-profile-data">
+			<div class="form-group email">
+				{{ form_label(form.email)}}
+				<div class="form-input_bg">
+					{{ form_widget(form.email, 
                             { 'attr': { placeholder: 'Email ...' } }
                         )}}
-					</div>
 				</div>
-				<div class="form-group text">
-					{{ form_label(form.username)}}
-					<div class="form-input_bg">
-						{{ form_widget(form.username, 
+			</div>
+			<div class="form-group text">
+				{{ form_label(form.username)}}
+				<div class="form-input_bg">
+					{{ form_widget(form.username, 
                             { 'attr': { placeholder: 'Username ...' } }
                         )}}
-					</div>
-				</div>
-				{# <div class="form-row">
-					<div class="form-group password">
-						{{ form_label(form.password)}}
-						<div class="form-input_bg">
-							{{ form_widget(form.password, 
-                            { 'attr': { placeholder: 'Password ...' } }
-                        )}}
-						</div>
-					</div>
-					<div class="form-group password">
-						{{ form_label(form.rePassword)}}
-						<div class="form-input_bg">
-							{{ form_widget(form.rePassword, 
-                            { 'attr': { placeholder: 'Confirm Password ...' } }
-                        )}}
-						</div>
-					</div>
-				</div> #}
-			</div>
-
-
-			<div class="form-btns">
-				<div class="form-btns_item">
-					<button class="btn btn_prm" type="submit">
-						save
-					</button>
-					<a href="{{ path('app_explore') }}">
-						<button class='btn btn_sec' type="button">cancel</button>
-					</a>
 				</div>
 			</div>
+		</div>
+
+		<div class="form-btns">
+			<div class="form-btns_item">
+				<button class="btn btn_prm" type="submit">
+					save
+				</button>
+				<a href="{{ path('app_explore') }}">
+					<button class='btn btn_sec' type="button">cancel</button>
+				</a>
+			</div>
+		</div>
 		{{ form_end(form) }}
 
-		</form>
-	</main>
-{% endblock %}
+
+		<div class="form-profile-data password">
+			{{ form_start(form_pas) }}
+			<div class="container">
+				<div class="form-group text">
+					<div class="form-row">
+						{{ form_widget(form_pas.plainPassword)}}
+					</div>
+					<button class="btn btn_prm" type="submit">
+						Update
+					</button>
+				</div>
+				{{ form_end(form_pas) }}
+			</div>
+
+
+		</main>
+	{% endblock %}
 

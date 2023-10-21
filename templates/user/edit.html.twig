@@ -1,13 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}Edit User
+{% endblock %}
+
+
+{% block stylesheets %}
+	<link href="{{ asset('style/form.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('style/profile.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+	<script defer src="{{ asset('app/nav.js') }}"></script>
+{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+	<main>
+		{% include "template_parts/_nav.html.twig" %}
+	
+		<div class="form-title">
+			<h1 class="title">Edit User</h1>
+		</div>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+		{{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+		<div class="delete btn_center">
+			{{ include('user/_delete_form.html.twig') }}
+		</div>
+	</main>
 
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
+

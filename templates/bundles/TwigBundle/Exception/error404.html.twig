@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<main>
+		<div class="container">
+			<div class="error">
+				<h1 class="title">Oups, somethig went wrong...</h1>
+				<p class="suptitle">Return to</p>
+        <a class="btn btn_thr btn_big" href="{{ path('app_home') }}">home</a>
+			</div>
+		</div>
+	</main>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment Manager
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('style/manager.css') }}" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block javascripts %}
+	<script defer src="{{ asset('app/nav.js') }}"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+	<script defer src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+{% endblock %}
+
+
+{% block body %}
+	<main class="main">
+		{% include "template_parts/_nav.html.twig" %}
+		<header class="header">
+			<div class="header-title">
+				<h1 class="title bg">Comment manager</h1>
+			</div>
+		</header>
+
+		<table class="table" data-toggle="table" data-search="true" data-pagination="true">
+			<thead>
+				<tr>
+					<th class="title" data-field="id" data-sortable="true">Id</th>
+					<th class="title" data-field="text" data-sortable="true">Text</th>
+					<th class="title" data-field="created" data-sortable="true">Created</th>
+					<th class="title" data-field="approved" data-sortable="true">Approved</th>
+					<th class="title">actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for comment in comments %}
+					<tr>
+						<td>{{ comment.id }}</td>
+						<td>{{ comment.text }}</td>
+						<td>{{ comment.created ? comment.created|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ comment.approved ? 'Yes' : 'No' }}</td>
+						<td>
+							<ul class="table-actions">
+								<li class="table-actions_item">
+									<a class="btn_view" href="{{ path('app_blog_show', {'id': comment.blog.getId}) }}">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+									</a>
+								</li>
+								<li class="table-actions_item">
+									<a class="btn_edit" href="{{ path('app_comment_edit', {'id': comment.id}) }}">
+										<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<g clip-path="url(#clip0_753_217)">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M7.58302 1.43657C7.95338 0.776538 8.56298 0.29502 9.27782 0.0978502C9.99266 -0.0993195 10.7542 0.00399557 11.3952 0.385086L12.6056 1.10405C13.2462 1.48559 13.7136 2.11361 13.905 2.85004C14.0964 3.58648 13.9961 4.37107 13.6262 5.03137L8.04318 14.9935L3.45246 16L2 11.3987L7.58302 1.43657ZM10.6973 1.62979L11.9077 2.34875C12.228 2.53952 12.4617 2.85353 12.5574 3.22174C12.6531 3.58996 12.603 3.98226 12.418 4.31241L11.7201 5.55935L8.09334 3.40247L8.79122 2.15553C8.9764 1.82551 9.2812 1.58475 9.63862 1.48617C9.99604 1.38758 10.3768 1.43924 10.6973 1.62979ZM11.0223 6.80405L7.39547 4.64717L3.52006 11.5627L4.39241 14.3262L7.14685 13.7195L11.0223 6.80405Z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0_753_217">
+													<rect width="16" height="16" fill="white"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</a>
+								</li>
+								<li class="table-actions_item">
+									{{ include('comment/_delete_form.html.twig') }}
+								</li>
+							</ul>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<a href="{{ path('app_comment_new') }}">Create new</a>
+	</main>
+{% endblock %}
+

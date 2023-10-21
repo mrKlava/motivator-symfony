@@ -10,12 +10,12 @@ font-family: 'Karantina', cursive;
   padding: 8rem 1rem;
 }
 .filter-content {
-  height: 20rem;
+  max-width: 1000px;
   background: url("/img/page/explore/bg/filter-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 0 2rem;
-  padding: 4rem 2rem;
+  padding: 4rem 7rem;
 }
 
 .blogs {

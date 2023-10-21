@@ -46,6 +46,11 @@ p {
   padding: 0 1rem;
   margin: 0 auto;
 }
+.container .error {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
 
 a {
   text-decoration: none;
@@ -252,6 +257,10 @@ button {
   margin: 0 auto 3rem;
 }
 
+.btn_approve {
+  margin-bottom: 1rem;
+}
+
 /* 
 ========================================================
                     Navigation 
@@ -273,7 +282,7 @@ button {
   background-color: #eadb7c;
   position: absolute;
   top: -1rem;
-  right: -10rem;
+  right: -12rem;
   box-shadow: 0 0 2rem #0c0c16;
   transition: right 0.2s linear;
 }

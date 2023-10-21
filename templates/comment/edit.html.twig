@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Edit Comment
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('style/form.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('style/blog-editor.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+	<script defer src="{{ asset('app/nav.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+	<main class="main">
+		{% include "template_parts/_nav.html.twig" %}
+
+		{{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+		<div class="btn_center">
+			{{ include('comment/_approve_form.html.twig') }}
+			{{ include('comment/_delete_form.html.twig') }}
+
+		</div>
+	</maim>
+{% endblock %}
+

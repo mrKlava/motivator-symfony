@@ -41,6 +41,9 @@ table td.title {
   gap: 1rem;
   height: 100%;
 }
+.table-actions_item form {
+  display: inline;
+}
 
 .fixed-table-toolbar {
   padding: 1rem 2rem 2rem;
