@@ -22,7 +22,7 @@
 
 		<section class="filter">
 			<div class="filter-content">
-				<form>
+				<form method="post">
 					{# {{ form_start(form) }} #}
 					
 					<div class="form-group text">
@@ -35,9 +35,9 @@
 						</label>
 						<select name="category" id="category">
 							<option value="null" default>All</option>
-							<option value="1" default>Life</option>
+							<option value="1" default>Sport</option>
 							<option value="2" default>Mountains</option>
-							<option value="3" default>Sport</option>
+							<option value="3" default>Life</option>
 						</select>
 
 					</div>
@@ -113,7 +113,9 @@
 					</div>
 
 				{% else %}
+				<div class="container">
 					<h1 class="title">no records found</h1>
+				</div>
 				{% endfor %}
 
 				<div class="btn_center">

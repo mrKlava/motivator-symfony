@@ -40,16 +40,16 @@ class ExploreController extends AbstractController
         //         'form'  => $form,
         //     ]);
         // }
-
-        if ($request->query) {
-            dump('true');
+        
+        $cat = $request->getPayload()->get('category');
+        $text = $request->getPayload()->get('text');
+        
+        if ($cat !== "null") {
+            $blogs = $blogRepository->filterByCategory($cat, $text !== "null" ? $text : "%" );
+        } else {
+            $blogs = $blogRepository->findAll();
         }
-
-        $blogs = $blogRepository->findAll();
-
-        dump($request->query->get('text'));
-        dump($request->getPayload()->get('filter_blog'));
-        dump($request);
+        
 
         return $this->render('explore/index.html.twig', [
             'title' => 'Motivator Explore',

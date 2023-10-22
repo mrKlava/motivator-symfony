@@ -21,20 +21,21 @@ class BlogRepository extends ServiceEntityRepository
         parent::__construct($registry, Blog::class);
     }
 
-//    /**
-//     * @return Blog[] Returns an array of Blog objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('b.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+   /**
+    * @return Blog[] Returns an array of Blog objects
+    */
+   public function filterByCategory($cat, $text = "%"): array
+   {
+       return $this->createQueryBuilder('b')
+           ->andWhere('b.category = :cat')
+           ->andWhere('b.title LIKE :text')
+           ->setParameter('cat', $cat)
+           ->setParameter('text', $text)
+           ->orderBy('b.created', 'ASC')
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 
 //    public function findOneBySomeField($value): ?Blog
 //    {
