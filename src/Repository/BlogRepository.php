@@ -6,6 +6,8 @@ use App\Entity\Blog;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+// test
+
 /**
  * @extends ServiceEntityRepository<Blog>
  *
